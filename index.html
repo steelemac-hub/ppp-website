@@ -11,8 +11,8 @@
     <meta property="og:description"
         content="Private contrast therapy for the Upstate. Book your own session with elite equipment and automated access.">
     <meta property="og:type" content="website">
-    <link rel="icon" href="assets/favicon.png" type="image/png">
-    <link rel="stylesheet" href="styles.css?v=4">
+    <link rel="icon" href="assets/pink-pony.png" type="image/png">
+    <link rel="stylesheet" href="styles.css?v=5">
 </head>
 
 <body>
@@ -21,8 +21,8 @@
     <nav class="navbar">
         <div class="container">
             <a href="#" class="nav-logo">
-                <img src="assets/logo-cleaned.png" alt="Pink Pony Plunge logo"
-                    style="height: 96px; width: auto; margin-top: 4px;">
+                <img src="assets/logo-badge.jpeg" alt="Pink Pony Plunge logo"
+                    style="height: 80px; width: auto; border-radius: 50%;">
             </a>
 
             <ul class="nav-links">
@@ -33,7 +33,7 @@
                 <li><a href="#faq">FAQ</a></li>
             </ul>
 
-            <a href="mailto:info@pinkponyplunge.com?subject=Booking%20Inquiry" class="btn btn-fire btn-sm nav-cta">Book
+            <a href="#book" class="btn btn-fire btn-sm nav-cta">Book
                 Now</a>
 
             <button class="hamburger" id="hamburger" aria-label="Open menu">
@@ -48,21 +48,25 @@
             <a href="#rentals">Event Rentals</a>
             <a href="#difference">Why PPP</a>
             <a href="#faq">FAQ</a>
-            <a href="mailto:info@pinkponyplunge.com?subject=Booking%20Inquiry"
-                style="color: #E86263; font-weight: 700;">Book Now</a>
+            <a href="#book"
+                style="color: #E91E8C; font-weight: 700;">Book Now</a>
         </div>
     </nav>
 
     <!-- ========== HERO ========== -->
     <section class="hero">
+        <video class="hero-video" autoplay muted loop playsinline>
+            <source src="assets/pony_dive_cogvideo.mp4" type="video/mp4">
+        </video>
+        <div class="hero-overlay"></div>
         <div class="container">
             <div class="hero-ribbon">
-                <img src="assets/logo-cleaned.png" alt="Pink Pony Plunge complete logo" class="hero-logo">
+                <img src="assets/logo-badge.jpeg" alt="Pink Pony Plunge complete logo" class="hero-logo" style="border-radius: 50%;">
             </div>
             <h1>Your Private Contrast<br>Therapy Session</h1>
             <p class="tagline">Book your own private session with elite-level equipment. Automated smart lock access, no staff hovering &mdash; just you and the plunge.</p>
             <div class="hero-buttons">
-                <a href="#sessions" class="btn btn-fire">Book a Private Session</a>
+                <a href="#book" class="btn btn-fire">Book a Private Session</a>
                 <a href="#rentals" class="btn btn-outline" style="border-color: #fff; color: #fff;">Rent for Your
                     Event</a>
             </div>
@@ -181,38 +185,44 @@
             </div>
 
             <div class="pricing-grid pricing-grid-6">
-                <div class="pricing-card">
+                <a href="#book" class="pricing-card">
                     <h3>Express Dip</h3>
                     <div class="price">$15</div>
                     <p class="price-detail">15 minutes</p>
-                </div>
-                <div class="pricing-card">
+                    <span class="pricing-cta">Book Now</span>
+                </a>
+                <a href="#book" class="pricing-card">
                     <h3>Quick Session</h3>
                     <div class="price">$25</div>
                     <p class="price-detail">30 minutes</p>
-                </div>
-                <div class="pricing-card featured">
+                    <span class="pricing-cta">Book Now</span>
+                </a>
+                <a href="#book" class="pricing-card featured">
                     <span class="pricing-badge">Most Popular</span>
                     <h3>Contrast Session</h3>
                     <div class="price">$35</div>
                     <p class="price-detail">45 minutes &mdash; sauna + plunge</p>
-                </div>
-                <div class="pricing-card">
+                    <span class="pricing-cta">Book Now</span>
+                </a>
+                <a href="#book" class="pricing-card">
                     <h3>Full Recovery</h3>
                     <div class="price">$45</div>
                     <p class="price-detail">60 minutes</p>
-                </div>
-                <div class="pricing-card">
+                    <span class="pricing-cta">Book Now</span>
+                </a>
+                <a href="#book" class="pricing-card">
                     <h3>Ultimate Reset</h3>
                     <div class="price">$75</div>
                     <p class="price-detail">120 minutes</p>
-                </div>
-                <div class="pricing-card">
+                    <span class="pricing-cta">Book Now</span>
+                </a>
+                <a href="#book" class="pricing-card">
                     <h3>Unlimited Monthly</h3>
                     <div class="price">$150</div>
                     <p class="price-detail">per month &mdash; all sessions</p>
                     <span class="savings">Best for regulars</span>
-                </div>
+                    <span class="pricing-cta">Book Now</span>
+                </a>
             </div>
 
             <p style="text-align: center; margin-top: 16px; color: var(--slate-gray); font-size: 0.9rem;">
@@ -220,8 +230,20 @@
             </p>
 
             <div class="text-center" style="margin-top: 32px;">
-                <a href="mailto:info@pinkponyplunge.com?subject=Book%20a%20Private%20Session" class="btn btn-fire">Book
+                <a href="#book" class="btn btn-fire">Book
                     a Private Session</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== BOOK NOW (Acuity Embed) ========== -->
+    <section id="book" style="background: var(--white);">
+        <div class="container text-center">
+            <p class="section-label">Ready to Plunge?</p>
+            <h2 class="section-title">Book Your Session</h2>
+            <p class="section-subtitle">Pick your time, get your access code, and show up. It's that simple.</p>
+            <div class="acuity-embed">
+                <iframe src="https://app.acuityscheduling.com/schedule.php?owner=38588940" title="Schedule Appointment" width="100%" height="800" frameborder="0"></iframe>
             </div>
         </div>
     </section>

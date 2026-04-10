@@ -6,34 +6,34 @@
 /* --- Custom Properties (Design Tokens) --- */
 :root {
   /* Brand Colors */
-  --fire-coral: #E86263;
-  --sky-blue: #58AFDC;
-  --water-cyan: #59B1D9;
-  --sunset-coral: #EB796F;
-  --deep-sky: #56ADDA;
-  --purple-transition: #B098C4;
+  --fire-coral: #E91E8C;
+  --sky-blue: #00B4D8;
+  --water-cyan: #00B4D8;
+  --sunset-coral: #F04DA0;
+  --deep-sky: #009DC0;
+  --purple-transition: #7B1E3F;
 
   /* Neutrals */
-  --charcoal: #212529;
-  --slate-gray: #6C757D;
+  --charcoal: #1B3A4B;
+  --slate-gray: #4A6572;
   --medium-gray: #CBCBCB;
   --soft-gray: #E7E7E7;
-  --ice-crystal: #FBFDFC;
+  --ice-crystal: #F5F9FB;
   --white: #FFFFFF;
 
   /* Gradients */
-  --gradient-hero: linear-gradient(135deg, #E86263 0%, #EB796F 25%, #B098C4 50%, #56ADDA 75%, #58AFDC 100%);
-  --gradient-warm: linear-gradient(135deg, #EB796F 0%, #E86263 50%, #F08080 100%);
-  --gradient-cool: linear-gradient(135deg, #56ADDA 0%, #58AFDC 50%, #59B1D9 100%);
-  --gradient-subtle: linear-gradient(180deg, #FFFFFF 0%, #FBFDFC 100%);
+  --gradient-hero: linear-gradient(135deg, #E91E8C 0%, #7B1E3F 35%, #1B3A4B 65%, #00B4D8 100%);
+  --gradient-warm: linear-gradient(135deg, #F04DA0 0%, #E91E8C 50%, #D41A7E 100%);
+  --gradient-cool: linear-gradient(135deg, #009DC0 0%, #00B4D8 50%, #33C4E2 100%);
+  --gradient-subtle: linear-gradient(180deg, #FFFFFF 0%, #F5F9FB 100%);
 
   /* Shadows */
   --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
   --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06);
   --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05);
   --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.15), 0 10px 10px rgba(0, 0, 0, 0.04);
-  --shadow-fire: 0 4px 12px rgba(232, 98, 99, 0.3);
-  --shadow-ice: 0 4px 12px rgba(88, 175, 220, 0.3);
+  --shadow-fire: 0 4px 12px rgba(233, 30, 140, 0.3);
+  --shadow-ice: 0 4px 12px rgba(0, 180, 216, 0.3);
 
   /* Transitions */
   --transition-fast: 150ms ease-out;
@@ -287,10 +287,37 @@ section {
 
 /* --- Hero --- */
 .hero {
+  position: relative;
+  overflow: hidden;
   background: var(--gradient-hero);
   padding: 56px 0;
   color: var(--white);
   text-align: center;
+}
+
+.hero-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  z-index: 0;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(27, 58, 75, 0.7) 0%, rgba(123, 30, 63, 0.55) 50%, rgba(27, 58, 75, 0.7) 100%);
+  z-index: 1;
+}
+
+.hero .container {
+  position: relative;
+  z-index: 2;
 }
 
 .hero-ribbon {
@@ -313,19 +340,18 @@ section {
 }
 
 .hero-logo {
-  max-width: 1200px;
-  width: 95%;
-  height: auto;
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
   display: block;
-  margin-right: 15px;
-  /* Visually shifts logo left to balance right-heavy graphic */
+  margin: 0 auto;
 }
 
 .hero h1 {
   font-size: 1.8rem;
   font-weight: 800;
   margin-bottom: 12px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
 }
 
 .hero .tagline {
@@ -356,6 +382,21 @@ section {
 .hero .service-area {
   font-size: 0.9rem;
   opacity: 0.85;
+}
+
+/* --- Acuity Embed --- */
+.acuity-embed {
+  margin-top: 32px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+
+.acuity-embed iframe {
+  display: block;
 }
 
 /* --- Equipment Cards (What We Bring) --- */
@@ -472,6 +513,12 @@ section {
   gap: 20px;
 }
 
+a.pricing-card {
+  text-decoration: none;
+  display: block;
+  cursor: pointer;
+}
+
 .pricing-card {
   background: var(--white);
   border: 1px solid var(--soft-gray);
@@ -529,13 +576,29 @@ section {
 
 .pricing-card .savings {
   display: inline-block;
-  background: rgba(232, 98, 99, 0.1);
+  background: rgba(233, 30, 140, 0.1);
   color: var(--sunset-coral);
   padding: 4px 12px;
   border-radius: 20px;
   font-size: 0.8rem;
   font-weight: 600;
-  border: 1px solid rgba(232, 98, 99, 0.3);
+  border: 1px solid rgba(233, 30, 140, 0.3);
+}
+
+.pricing-cta {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 8px 20px;
+  background: var(--fire-coral);
+  color: var(--white);
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: background var(--transition-fast);
+}
+
+a.pricing-card:hover .pricing-cta {
+  background: var(--sunset-coral);
 }
 
 /* Contrast therapy highlight */
